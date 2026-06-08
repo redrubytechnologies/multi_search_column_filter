@@ -1,0 +1,146 @@
+/* Multi Search Column Filter Styles - ONLY for List Views */
+
+/* CRITICAL: Hide search row completely by default */
+.column_search_row {
+    display: none !important;
+}
+
+/* ONLY show in list view context */
+.o_list_view .column_search_row {
+    display: table-row !important;
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.o_list_view .column_search_row th {
+    padding: 6px 8px !important;
+    vertical-align: middle;
+    background-color: #f8f9fa;
+    border-right: 1px solid #dee2e6;
+    box-sizing: border-box;
+}
+
+.o_list_view .column_search_row th:last-child {
+    border-right: none;
+}
+
+/* Empty cells for non-searchable columns (checkbox, favorites, buttons) */
+.o_list_view .column_search_row th:empty {
+    background-color: #f8f9fa;
+    padding: 6px 8px !important;
+}
+
+/* Search input wrapper */
+.o_list_view .column_search_wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Search input field */
+.o_list_view .column_search_input {
+    width: 100%;
+    max-width: 100%;
+    min-width: 50px;
+    padding: 6px 28px 6px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #495057;
+    background-color: #fff;
+    transition: all 0.15s ease-in-out;
+    box-sizing: border-box;
+}
+
+.o_list_view .column_search_input:focus {
+    border-color: #875a7b;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(135, 90, 123, 0.25);
+}
+
+.o_list_view .column_search_input::placeholder {
+    color: #6c757d;
+    opacity: 0.5;
+    font-size: 12px;
+}
+
+/* Active search state */
+.o_list_view .column_search_input.has-value {
+    border-color: #875a7b;
+    background-color: #fff3f8;
+    font-weight: 500;
+}
+
+/* Clear button */
+.o_list_view .column_search_clear {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #6c757d;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    display: none;
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+.o_list_view .column_search_input.has-value ~ .column_search_clear {
+    display: flex;
+}
+
+.o_list_view .column_search_clear:hover {
+    color: #fff;
+    background-color: #dc3545;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .o_list_view .column_search_input {
+        font-size: 12px;
+        padding: 4px 24px 4px 8px;
+    }
+    
+    .o_list_view .column_search_row th {
+        padding: 4px 6px !important;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .o_list_view .column_search_row {
+        background-color:  #f8f9fa;
+        border-bottom-color:  #f8f9fa;
+    }
+    
+    .o_list_view .column_search_row th {
+        background-color:  #f8f9fa;
+        border-right-color: #f8f9fa;
+    }
+    
+    .o_list_view .column_search_input {
+        background-color:  #f8f9fa;
+        border-color: #444;
+        color: #000000;
+    }
+    
+    .o_list_view .column_search_input:focus {
+        background-color:  #f8f9fa;
+        border-color:solid #000;
+    }
+    
+    .o_list_view .column_search_input.has-value {
+        background-color:  #ffffff;
+    }
+}
