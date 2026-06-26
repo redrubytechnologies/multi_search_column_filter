@@ -15,6 +15,7 @@
     },
     'author': 'RedRuby Technologies',
     'website': 'https://redrubytechnologies.com/',
+    'images': ['static/description/banner.png'],
     'installable': True,
     'application': False,
     'auto_install': False,
